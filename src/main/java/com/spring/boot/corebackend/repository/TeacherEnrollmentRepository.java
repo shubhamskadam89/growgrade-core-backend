@@ -17,4 +17,7 @@ public interface TeacherEnrollmentRepository
 
         @EntityGraph(attributePaths = { "teacher", "student" })
         List<TeacherEnrollment> findByTeacher(UserProfile teacher);
+    @EntityGraph(attributePaths = { "teacher", "student" })
+    List<TeacherEnrollment> findByStudent(UserProfile student);
+
 }
