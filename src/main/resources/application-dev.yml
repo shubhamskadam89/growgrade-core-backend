@@ -22,3 +22,8 @@ logging:
   level:
     root: INFO
     com.auth_app.backend.auth_app: DEBUG
+
+security:
+  jwt:
+    # Minimum 32 characters for HMAC-SHA key material. Use env var in prod.
+    secret: ${JWT_SECRET}

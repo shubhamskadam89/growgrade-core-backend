@@ -1,6 +1,9 @@
 package com.spring.boot.corebackend.mapper;
 
 import com.spring.boot.corebackend.dtos.quiz.QuestionDto;
+import com.spring.boot.corebackend.dtos.quiz.QuizQuestionCreateDto;
+import com.spring.boot.corebackend.entity.quiz.QuestionOption;
+import com.spring.boot.corebackend.entity.quiz.Quiz;
 import com.spring.boot.corebackend.entity.quiz.QuizQuestion;
 
 import java.util.Collections;
@@ -24,5 +27,29 @@ public final class QuizQuestionMapper {
                                 .collect(Collectors.toList())
                         : Collections.emptyList())
                 .build();
+    }
+
+    public static QuizQuestion toEntity(QuizQuestionCreateDto dto, Quiz quiz) {
+        if (dto == null)
+            return null;
+
+        QuizQuestion question = QuizQuestion.builder()
+                .quiz(quiz)
+                .questionText(dto.getText())
+                .difficulty(dto.getDifficulty())
+                .build();
+
+        if (dto.getOptions() != null) {
+            var options = dto.getOptions().stream()
+                    .map(opt -> QuestionOption.builder()
+                            .question(question)
+                            .optionText(opt.getOptionText())
+                            .correct(opt.isCorrect())
+                            .build())
+                    .collect(Collectors.toList());
+            question.setOptions(options);
+        }
+
+        return question;
     }
 }

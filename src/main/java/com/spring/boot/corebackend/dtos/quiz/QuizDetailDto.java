@@ -3,8 +3,10 @@ import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
 
 import com.spring.boot.corebackend.entity.quiz.QuizLevel;
 import com.spring.boot.corebackend.entity.quiz.QuizVisibility;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.time.Instant;
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.UUID;
 
 @Data
 @Builder
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class QuizDetailDto {
     private UUID id;
     private String title;

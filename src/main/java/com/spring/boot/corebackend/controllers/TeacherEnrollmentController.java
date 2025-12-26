@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,16 +32,18 @@ public class TeacherEnrollmentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(enrollment);
     }
 
-    @GetMapping("/students/{teacherId}")
-    public ResponseEntity<Iterable<UserSummaryDto>> getMyEnrolledStudents(@PathVariable UUID teacherId) {
+    @GetMapping("/students")
+    public ResponseEntity<Iterable<UserSummaryDto>> getMyEnrolledStudents(Authentication authentication) {
+        UUID teacherId = (UUID)authentication.getPrincipal();
         log.info("Request received to fetch enrolled students for teacher {}", teacherId);
         Iterable<UserSummaryDto> students = enrollmentService.getEnrolledStudents(teacherId);
         log.info("Successfully fetched enrolled students for teacher {}", teacherId);
         return ResponseEntity.status(HttpStatus.CREATED).body(students);
     }
 
-    @GetMapping("/teachers/{studentId}")
-    public ResponseEntity<Iterable<UserSummaryDto>> getMyTeachers(@PathVariable UUID studentId) {
+    @GetMapping("/teachers")
+    public ResponseEntity<Iterable<UserSummaryDto>> getMyTeachers(Authentication authentication) {
+        UUID studentId = (UUID) authentication.getPrincipal();
         log.info("Request received to fetch teachers for student {}", studentId);
         Iterable<UserSummaryDto> teachers = enrollmentService.getStudentsTeachers(studentId);
         log.info("Successfully fetched teachers for student {}", studentId);

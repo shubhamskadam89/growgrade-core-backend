@@ -6,6 +6,7 @@ import com.spring.boot.corebackend.dtos.quiz.QuizSummaryDto;
 import com.spring.boot.corebackend.service.interfaces.QuizService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,9 +22,10 @@ public class QuizController {
 
     @PostMapping
     public QuizSummaryDto createQuiz(
-            @RequestBody QuizCreationRequest request) {
+            @RequestBody QuizCreationRequest request, Authentication authentication ) {
+        java.util.UUID userId = (java.util.UUID) authentication.getPrincipal();
         log.info("Request received to create a quiz: {}", request.getTitle());
-        QuizSummaryDto createdQuiz = quizService.createQuiz(request);
+        QuizSummaryDto createdQuiz = quizService.createQuiz(request,userId);
         log.info("Quiz created successfully: {}", createdQuiz.getId());
         return createdQuiz;
     }
