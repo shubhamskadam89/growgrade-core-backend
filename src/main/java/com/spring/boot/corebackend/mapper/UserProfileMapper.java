@@ -1,8 +1,8 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.UserProfileDto;
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
-import com.spring.boot.corebackend.entity.UserProfile;
+import com.spring.boot.corebackend.dtos.user.UserProfileDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
+import com.spring.boot.corebackend.entity.user.UserProfile;
 
 public final class UserProfileMapper {
 

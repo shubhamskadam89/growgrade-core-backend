@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.service.interfaces;
 
-import com.spring.boot.corebackend.dtos.CreateUserProfileDto;
-import com.spring.boot.corebackend.dtos.UserProfileDto;
+import com.spring.boot.corebackend.dtos.user.CreateUserProfileDto;
+import com.spring.boot.corebackend.dtos.user.UserProfileDto;
 
 public interface UserProfileService {
 

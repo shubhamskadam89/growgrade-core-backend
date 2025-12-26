@@ -1,10 +1,10 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.QuestionDto;
-import com.spring.boot.corebackend.dtos.QuestionOptionViewDto;
-import com.spring.boot.corebackend.dtos.QuizDetailDto;
-import com.spring.boot.corebackend.dtos.QuizSummaryDto;
-import com.spring.boot.corebackend.entity.Quiz;
+import com.spring.boot.corebackend.dtos.quiz.QuestionDto;
+import com.spring.boot.corebackend.dtos.quiz.QuestionOptionViewDto;
+import com.spring.boot.corebackend.dtos.quiz.QuizDetailDto;
+import com.spring.boot.corebackend.dtos.quiz.QuizSummaryDto;
+import com.spring.boot.corebackend.entity.quiz.Quiz;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.QuestionOptionViewDto;
-import com.spring.boot.corebackend.entity.QuestionOption;
+import com.spring.boot.corebackend.dtos.quiz.QuestionOptionViewDto;
+import com.spring.boot.corebackend.entity.quiz.QuestionOption;
 
 public final class QuestionOptionMapper {
 

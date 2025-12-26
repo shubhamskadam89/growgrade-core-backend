@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.controllers;
 
-import com.spring.boot.corebackend.dtos.CreateUserProfileDto;
-import com.spring.boot.corebackend.dtos.UserProfileDto;
+import com.spring.boot.corebackend.dtos.user.CreateUserProfileDto;
+import com.spring.boot.corebackend.dtos.user.UserProfileDto;
 import com.spring.boot.corebackend.repository.UserProfileRepository;
 import com.spring.boot.corebackend.service.interfaces.UserProfileService;
 import lombok.RequiredArgsConstructor;
@@ -23,17 +23,19 @@ public class UserProfileController {
     @GetMapping("/me")
     public ResponseEntity<UserProfileDto> getMyProfile(
             @RequestHeader("X-User-Id") java.util.UUID userId) {
-        log.info("Received request for get profile");
-        return ResponseEntity.ok(profileService.getUserProfile(userId));
+        log.info("Request received to fetch profile for userId: {}", userId);
+        UserProfileDto profile = profileService.getUserProfile(userId);
+        log.info("Successfully fetched profile for userId: {}", userId);
+        return ResponseEntity.ok(profile);
     }
 
     @PostMapping("/me")
     public ResponseEntity<UserProfileDto> createMyProfile(
             @RequestBody CreateUserProfileDto request,
             @RequestHeader("X-User-Id") java.util.UUID userId) {
-        log.info("Received request for create profile");
+        log.info("Request received to create profile for userId: {}", userId);
         UserProfileDto dto = profileService.createUserProfile(request, userId);
-        log.info("profile created");
+        log.info("Profile created successfully for userId: {}", userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(dto);
     }
 }

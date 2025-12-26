@@ -1,8 +1,8 @@
 package com.spring.boot.corebackend.service.impl;
 
-import com.spring.boot.corebackend.dtos.CreateUserProfileDto;
-import com.spring.boot.corebackend.dtos.UserProfileDto;
-import com.spring.boot.corebackend.entity.UserProfile;
+import com.spring.boot.corebackend.dtos.user.CreateUserProfileDto;
+import com.spring.boot.corebackend.dtos.user.UserProfileDto;
+import com.spring.boot.corebackend.entity.user.UserProfile;
 import com.spring.boot.corebackend.mapper.UserProfileMapper;
 import com.spring.boot.corebackend.repository.UserProfileRepository;
 import com.spring.boot.corebackend.service.interfaces.UserProfileService;

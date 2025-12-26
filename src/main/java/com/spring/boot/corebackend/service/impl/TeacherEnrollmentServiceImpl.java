@@ -1,11 +1,11 @@
 package com.spring.boot.corebackend.service.impl;
 
-import com.spring.boot.corebackend.dtos.EnrollStudentRequest;
-import com.spring.boot.corebackend.dtos.TeacherEnrollmentDto;
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
-import com.spring.boot.corebackend.entity.TeacherEnrollment;
-import com.spring.boot.corebackend.entity.UserProfile;
-import com.spring.boot.corebackend.entity.UserType;
+import com.spring.boot.corebackend.dtos.user.EnrollStudentRequest;
+import com.spring.boot.corebackend.dtos.user.TeacherEnrollmentDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
+import com.spring.boot.corebackend.entity.user.TeacherEnrollment;
+import com.spring.boot.corebackend.entity.user.UserProfile;
+import com.spring.boot.corebackend.entity.user.UserType;
 import com.spring.boot.corebackend.mapper.TeacherEnrollmentMapper;
 import com.spring.boot.corebackend.mapper.UserProfileMapper;
 import com.spring.boot.corebackend.repository.TeacherEnrollmentRepository;

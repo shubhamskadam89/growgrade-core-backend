@@ -1,8 +1,8 @@
 package com.spring.boot.corebackend.repository;
 
-import com.spring.boot.corebackend.entity.Quiz;
-import com.spring.boot.corebackend.entity.QuizAttempt;
-import com.spring.boot.corebackend.entity.UserProfile;
+import com.spring.boot.corebackend.entity.quiz.Quiz;
+import com.spring.boot.corebackend.entity.quiz.QuizAttempt;
+import com.spring.boot.corebackend.entity.user.UserProfile;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 

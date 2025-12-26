@@ -1,6 +1,7 @@
 package com.spring.boot.corebackend.controllers;
 
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
+import com.spring.boot.corebackend.dtos.quiz.QuizSummaryDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
 import com.spring.boot.corebackend.service.interfaces.AdminService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +20,18 @@ public class AdminController {
     private final AdminService adminService;
 
     @GetMapping("/users")
-    public Iterable<UserSummaryDto> getAllUsers(){
-        log.info("Fetch request for all users");
-        return adminService.getAllUsers();
-
+    public Iterable<UserSummaryDto> getAllUsers() {
+        log.info("Request received to fetch all users.");
+        Iterable<UserSummaryDto> users = adminService.getAllUsers();
+        log.info("Successfully fetched all users.");
+        return users;
     }
-//
-//    @GetMapping("/quizzes")
-//    public List<QuizSummaryDto> getAllQuizzes();
+
+    @GetMapping("/quizzes")
+    public Iterable<QuizSummaryDto> getAllQuizzes() {
+        log.info("Request received to fetch all quizzes.");
+        Iterable<QuizSummaryDto> quizzes = adminService.getAllQuizzes();
+        log.info("Successfully fetched all quizzes.");
+        return quizzes;
+    }
 }

@@ -1,9 +1,9 @@
 package com.spring.boot.corebackend.service.impl;
 
-import com.spring.boot.corebackend.dtos.QuizSummaryDto;
-import com.spring.boot.corebackend.dtos.UserProfileDto;
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
-import com.spring.boot.corebackend.entity.UserProfile;
+import com.spring.boot.corebackend.dtos.quiz.QuizSummaryDto;
+import com.spring.boot.corebackend.dtos.user.UserProfileDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
+import com.spring.boot.corebackend.entity.user.UserProfile;
 import com.spring.boot.corebackend.mapper.UserProfileMapper;
 import com.spring.boot.corebackend.repository.UserProfileRepository;
 import com.spring.boot.corebackend.service.interfaces.AdminService;

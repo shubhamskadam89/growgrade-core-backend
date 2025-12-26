@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.TeacherEnrollmentDto;
-import com.spring.boot.corebackend.entity.TeacherEnrollment;
+import com.spring.boot.corebackend.dtos.user.TeacherEnrollmentDto;
+import com.spring.boot.corebackend.entity.user.TeacherEnrollment;
 
 public final class TeacherEnrollmentMapper {
 

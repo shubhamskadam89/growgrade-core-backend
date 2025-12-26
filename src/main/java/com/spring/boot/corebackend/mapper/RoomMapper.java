@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.RoomDto;
-import com.spring.boot.corebackend.entity.Room;
+import com.spring.boot.corebackend.dtos.room.RoomDto;
+import com.spring.boot.corebackend.entity.room.Room;
 
 public final class RoomMapper {
 

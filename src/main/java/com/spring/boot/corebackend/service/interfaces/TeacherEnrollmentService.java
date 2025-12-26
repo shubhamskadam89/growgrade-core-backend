@@ -1,8 +1,8 @@
 package com.spring.boot.corebackend.service.interfaces;
 
-import com.spring.boot.corebackend.dtos.EnrollStudentRequest;
-import com.spring.boot.corebackend.dtos.TeacherEnrollmentDto;
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
+import com.spring.boot.corebackend.dtos.user.EnrollStudentRequest;
+import com.spring.boot.corebackend.dtos.user.TeacherEnrollmentDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
 
 import java.util.UUID;
 

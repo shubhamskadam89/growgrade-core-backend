@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.QuestionDto;
-import com.spring.boot.corebackend.entity.QuizQuestion;
+import com.spring.boot.corebackend.dtos.quiz.QuestionDto;
+import com.spring.boot.corebackend.entity.quiz.QuizQuestion;
 
 import java.util.Collections;
 import java.util.stream.Collectors;

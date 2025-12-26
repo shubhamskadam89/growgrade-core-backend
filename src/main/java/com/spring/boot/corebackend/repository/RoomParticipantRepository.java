@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.repository;
 
-import com.spring.boot.corebackend.entity.Room;
-import com.spring.boot.corebackend.entity.RoomParticipant;
+import com.spring.boot.corebackend.entity.room.Room;
+import com.spring.boot.corebackend.entity.room.RoomParticipant;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 

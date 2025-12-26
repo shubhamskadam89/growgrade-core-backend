@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.repository;
 
-import com.spring.boot.corebackend.entity.Quiz;
-import com.spring.boot.corebackend.entity.QuizQuestion;
+import com.spring.boot.corebackend.entity.quiz.Quiz;
+import com.spring.boot.corebackend.entity.quiz.QuizQuestion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

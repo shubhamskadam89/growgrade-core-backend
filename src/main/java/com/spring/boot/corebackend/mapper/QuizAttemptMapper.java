@@ -1,7 +1,7 @@
 package com.spring.boot.corebackend.mapper;
 
-import com.spring.boot.corebackend.dtos.QuizAttemptResultDto;
-import com.spring.boot.corebackend.entity.QuizAttempt;
+import com.spring.boot.corebackend.dtos.quiz.QuizAttemptResultDto;
+import com.spring.boot.corebackend.entity.quiz.QuizAttempt;
 
 public final class QuizAttemptMapper {
 

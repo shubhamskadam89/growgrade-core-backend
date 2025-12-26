@@ -1,8 +1,8 @@
 package com.spring.boot.corebackend.controllers;
 
-import com.spring.boot.corebackend.dtos.EnrollStudentRequest;
-import com.spring.boot.corebackend.dtos.TeacherEnrollmentDto;
-import com.spring.boot.corebackend.dtos.UserSummaryDto;
+import com.spring.boot.corebackend.dtos.user.EnrollStudentRequest;
+import com.spring.boot.corebackend.dtos.user.TeacherEnrollmentDto;
+import com.spring.boot.corebackend.dtos.user.UserSummaryDto;
 import com.spring.boot.corebackend.service.impl.TeacherEnrollmentServiceImpl;
 import com.spring.boot.corebackend.service.interfaces.TeacherEnrollmentService;
 import lombok.RequiredArgsConstructor;
@@ -24,21 +24,26 @@ public class TeacherEnrollmentController {
 
     @PostMapping("/students")
     public ResponseEntity<TeacherEnrollmentDto> enrollStudent(
-            @RequestBody EnrollStudentRequest request
-    ){
-        log.info("Received Request to enroll student"+request.getStudentId()+ "to teacher"+request.getTeacherId());
-        return ResponseEntity.status(HttpStatus.CREATED).body(enrollmentService.enrollStudent(request));
+            @RequestBody EnrollStudentRequest request) {
+        log.info("Request received to enroll student {} to teacher {}", request.getStudentId(), request.getTeacherId());
+        TeacherEnrollmentDto enrollment = enrollmentService.enrollStudent(request);
+        log.info("Student enrolled successfully.");
+        return ResponseEntity.status(HttpStatus.CREATED).body(enrollment);
     }
 
     @GetMapping("/students/{teacherId}")
-    public ResponseEntity<Iterable<UserSummaryDto>> getMyEnrolledStudents(@PathVariable UUID teacherId){
-        log.info("Received Request to  fetch enrolled student to teacher"+teacherId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(enrollmentService.getEnrolledStudents(teacherId));
+    public ResponseEntity<Iterable<UserSummaryDto>> getMyEnrolledStudents(@PathVariable UUID teacherId) {
+        log.info("Request received to fetch enrolled students for teacher {}", teacherId);
+        Iterable<UserSummaryDto> students = enrollmentService.getEnrolledStudents(teacherId);
+        log.info("Successfully fetched enrolled students for teacher {}", teacherId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(students);
     }
 
     @GetMapping("/teachers/{studentId}")
-    public ResponseEntity<Iterable<UserSummaryDto>> getMyTeachers(@PathVariable UUID studentId){
-        log.info("Received Request to  fetch teachers to whom student is enrolled"+studentId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(enrollmentService.getStudentsTeachers(studentId));
+    public ResponseEntity<Iterable<UserSummaryDto>> getMyTeachers(@PathVariable UUID studentId) {
+        log.info("Request received to fetch teachers for student {}", studentId);
+        Iterable<UserSummaryDto> teachers = enrollmentService.getStudentsTeachers(studentId);
+        log.info("Successfully fetched teachers for student {}", studentId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(teachers);
     }
 }
